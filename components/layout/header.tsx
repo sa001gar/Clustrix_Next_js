@@ -16,6 +16,7 @@ import {
   Youtube 
 } from "lucide-react"
 import { useState } from "react"
+import Image from "next/image"
 
 const navigation = [
   { name: "Home", href: "/" },
@@ -45,15 +46,15 @@ export function Header() {
           <div className="hidden md:flex items-center space-x-6">
             <div className="flex items-center space-x-2">
               <Phone className="h-4 w-4" />
-              <span>(000) 000-0000</span>
+              <span>(+91) 8629997123</span>
             </div>
             <div className="flex items-center space-x-2">
               <Mail className="h-4 w-4" />
-              <span>hello@clustrix.tech</span>
+              <span>contact@clustrix.tech</span>
             </div>
             <div className="flex items-center space-x-2">
               <MapPin className="h-4 w-4" />
-              <span>2464 Royal Ln. Mesa, New Jersey 45463</span>
+              <span>Durgapur, West Bengal</span>
             </div>
           </div>
           <div className="flex items-center space-x-3">
@@ -73,11 +74,40 @@ export function Header() {
       <header className="bg-white/95 backdrop-blur-sm shadow-lg border-b sticky top-0 z-50">
         <div className="container mx-auto py-4 flex items-center justify-between">
           <Link href="/" className="flex items-center space-x-3">
-            <div className="w-12 h-12 bg-gradient-to-r from-purple-600 to-violet-600 rounded-xl flex items-center justify-center shadow-lg">
-              <span className="text-white font-bold text-xl">C</span>
+            <div className="w-10 h-10 relative">
+              {/* You can replace this SVG with your actual logo image */}
+              <svg
+                viewBox="0 0 100 100"
+                className="w-full h-full"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                {/* Clustrix logo design */}
+                <circle cx="50" cy="20" r="12" fill="#2563eb" />
+                <circle cx="20" cy="50" r="12" fill="#2563eb" />
+                <circle cx="80" cy="50" r="12" fill="#2563eb" />
+                <circle cx="50" cy="80" r="12" fill="#2563eb" />
+                <circle cx="50" cy="50" r="8" fill="#1d4ed8" />
+                
+                {/* Connecting lines */}
+                <line x1="42" y1="28" x2="28" y2="42" stroke="#2563eb" strokeWidth="4" strokeLinecap="round" />
+                <line x1="58" y1="28" x2="72" y2="42" stroke="#2563eb" strokeWidth="4" strokeLinecap="round" />
+                <line x1="28" y1="58" x2="42" y2="72" stroke="#2563eb" strokeWidth="4" strokeLinecap="round" />
+                <line x1="72" y1="58" x2="58" y2="72" stroke="#2563eb" strokeWidth="4" strokeLinecap="round" />
+              </svg>
+              
+              {/* Alternative: Use your actual logo image
+              <Image
+                src="/clustrix-logo.png"
+                alt="Clustrix Logo"
+                fill
+                className="object-contain"
+                priority
+              />
+              */}
             </div>
-            <span className="text-2xl font-bold bg-gradient-to-r from-purple-600 to-violet-600 bg-clip-text text-transparent">
-              Clustrix.tech
+            <span className="text-2xl font-bold text-gray-900">
+              Clustrix
             </span>
           </Link>
 
@@ -102,9 +132,6 @@ export function Header() {
           </nav>
 
           <div className="flex items-center space-x-4">
-            <Button className="hidden md:flex bg-gradient-to-r from-purple-600 to-violet-600 hover:from-purple-700 hover:to-violet-700 text-white shadow-lg">
-              Get Started
-            </Button>
             <Button variant="ghost" size="sm" className="lg:hidden" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
               {mobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
             </Button>
@@ -127,9 +154,6 @@ export function Header() {
                   {item.name}
                 </Link>
               ))}
-              <Button className="w-full bg-gradient-to-r from-purple-600 to-violet-600 hover:from-purple-700 hover:to-violet-700 text-white">
-                Get Started
-              </Button>
             </div>
           </div>
         )}
